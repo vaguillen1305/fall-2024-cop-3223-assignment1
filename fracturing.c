@@ -56,23 +56,15 @@ double distanceFormula(double x1, double x2, double y1, double y2){
 
     double a = x2 - x1; 
     double c = pow(a, 2); 
-
     double b = y2 - y1; 
-    double d = pow(b, 2); 
-
-    double e = c + d; 
-
-    double distance = sqrt(e); 
-
-    return distance; 
+    double d = pow(b, 2);
+    return sqrt(c + d); 
 }
 
 // Helper Function: printDistance will ensure that the Distance computed is only printed within the calculateDistance function.
 
 void printDistance(double x1, double x2, double y1, double y2){
-    double distance; 
-
-    distanceFormula(x1, x2, y1, y2); 
+    double distance = distanceFormula(x1, x2, y1, y2); 
 
     printf("\nThe distance between the two points is %.4lf\n", distance); 
 
@@ -90,9 +82,7 @@ double calculateDistance(){
 
     // The Points have been printed, and now the coordinates will be applied to the distance formula.
 
-    double distance; 
-
-    distanceFormula(x1, x2, y1, y2); 
+    double distance = distanceFormula(x1, x2, y1, y2); 
 
     printDistance(x1, x2, y1, y2); 
 
@@ -107,9 +97,7 @@ double calculatePerimeter(){
 
     getUserData(&x1, &x2, &y1, &y2); 
 
-    double distance; 
-
-    distanceFormula(x1, x2, y1, y2); 
+    double distance = distanceFormula(x1, x2, y1, y2); 
 
     // If each set of points represents the diameter, then perimeter = pi * diameter.
 
@@ -130,13 +118,11 @@ double calculateArea(){
 
     // area of a circle = pi * r^2.
 
-    double distance; 
-
-    distanceFormula(x1, x2, y1, y2); 
+    double distance = distanceFormula(x1, x2, y1, y2); 
 
     double radius = distance / 2; 
 
-    double area = PI * radius; 
+    double area = PI * pow(radius, 2); 
 
     printf("The area of the city encompassed by your request is %0.4lf\n", area); 
 
@@ -153,9 +139,7 @@ double calculateWidth(){
 
     // Width of a circle is its diameter.
 
-    double distance; 
-
-    distanceFormula(x1, x2, y1, y2); 
+    double distance = distanceFormula(x1, x2, y1, y2); 
 
     printf("The width of the city encompassed by your request is %0.4lf", distance); 
 
@@ -173,9 +157,7 @@ double calculateHeight(){
 
     // The height of a circle is its diameter.
 
-    double distance; 
-
-    distanceFormula(x1, x2, y1, y2); 
+    double distance = distanceFormula(x1, x2, y1, y2); 
 
     printf("The height of the city encompassed by your request is %0.4lf\n", distance); 
 
